@@ -4,11 +4,21 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import ParticlesBackground from "./ParticlesBackground";
 import { Link as ScrollLink } from "react-scroll";
 
+import resumePDF from "/resume.pdf";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
+    g;
     setIsOpen(!isOpen);
+  };
+
+  const handleDownloadCV = () => {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = resumePDF;
+    downloadLink.download = "resume.pdf";
+    downloadLink.click();
   };
 
   return (
@@ -92,7 +102,10 @@ const Navbar = () => {
             </ScrollLink>
           </li>
         </ul>
-        <button className="bg-secondary rounded-full text-white px-4 py-2 hover:bg-green-300 transition-all duration-200 active:scale-95">
+        <button
+          onClick={handleDownloadCV}
+          className="bg-secondary rounded-full text-white px-4 py-2 hover:bg-green-300 transition-all duration-200 active:scale-95"
+        >
           Download CV
         </button>
       </div>
@@ -164,7 +177,7 @@ const Navbar = () => {
             </li>
           </ul>
           <button
-            onClick={toggleMenu}
+            onClick={handleDownloadCV}
             className="bg-secondary rounded-full text-white px-4 py-2 mb-5"
           >
             Download CV
