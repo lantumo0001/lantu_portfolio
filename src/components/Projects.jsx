@@ -39,6 +39,7 @@ const Projects = () => {
       image: "/beautiful-soup.png",
       description:
         "A Python web scraper is a tool designed to automatically extract data from websites.",
+      githubLink: "https://github.com/lantumo0001/web-scraper",
     },
   ];
 
